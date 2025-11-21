@@ -6,6 +6,7 @@ export interface Product {
   image: string;
   category: string;
   description: string
+  total?: number
 }
 
 export interface InitialState {
@@ -17,12 +18,13 @@ const initialState: InitialState = {
 };
 
 const productSlice = createSlice({
-  name: "cartSlice",
+  name: "cart",
   initialState,
   reducers: {
     setCart: (state, action: PayloadAction<Product>) => {
       state.cart = [...state.cart, action.payload];
     },
+                                                                                                                                 
     clearCart: (state) => {
       state.cart = [];
     },

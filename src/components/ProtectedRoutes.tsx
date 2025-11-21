@@ -7,8 +7,8 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const user = useSelector((state: RootState) => state.userAuth.user);
 
-  if (user?.role === "customer") {
-    return <Navigate to="/store" replace />;
+  if (user?.role !== "manager") {
+    return <Navigate to="/login" replace />;
   }
   return children;
 };

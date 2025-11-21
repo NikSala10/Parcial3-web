@@ -12,6 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<FormLogin />}></Route>
+          <Route path="/login" element={<FormLogin />}></Route>
           <Route path="/store" element={<Store />}></Route>
           <Route path="/admin/create" element={   <ProtectedRoute><AdminCreate /></ProtectedRoute>}></Route>
           <Route path="/cart" element={<Cart />}></Route>
